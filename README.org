@@ -34,7 +34,7 @@ from some pain in case you've somehow miraculously ended up here looking for exa
 ;; the original author's note in the "Usage" section below.
 #+END_SRC
 
-Full unaltered text from the author's original =README.md= below:
+Full unaltered text from the author's original =README.org= below:
 
 * What's Evil Leader?
   Evil Leader provides the =<leader>= feature from Vim that provides an easy way
