@@ -1,3 +1,41 @@
+** Why this fork exists
+   - The [original repo](https://github.com/cofi/evil-leader) hasn't been updated in 10 years.
+   - The author hasn't even touched their github since 2016.
+   - As someone fairly inexperienced with Emacs, figuring out how to make this work
+     with [straight](https://github.com/radian-software/straight.el) + [use-package](https://github.com/jwiegley/use-package) ate up way too much of my night.
+
+Basically I just want to put some example config code front and center to spare you
+from some pain in case you've somehow miraculously ended up here looking for exactly this:
+
+#+BEGIN_SRC emacs-lisp
+
+;; The line of code directly below just silences a complaint due to a bug related to evil.
+;; As far as I can tell, it needs to be repeated above every evil or evil-* installation.
+(setq evil-want-keybinding nil) 
+
+;; If you're using `straight` and `use-package` together, you're probably aware that there 
+;; are a multitude of "equivalent" ways to install and configure packages. I'm pretty sure
+;; I tried all of them and then some, but this is the only form that actually worked for me
+;; with `evil-leader`.
+;;
+;; Specifically, achieving the desired behavior required:
+;;  1. `use-package` rather than `straight-use-package`, along with
+;;  2. the ':straight (...)` form of the recipe.
+
+(use-package evil-leader
+  :straight (:host github :repo "apatterndarkly/evil-leader")
+	:config
+	(global-evil-leader-mode)
+	(evil-leader/set-leader "<SPC>"))
+
+;; Simple as can be once you know, right? Smooth-brained problems (:
+
+;; Also, I placed this code prior to code installing `evil` in accordance with 
+;; the original author's note in the "Usage" section below.
+#+END_SRC
+
+_What follows is the full unaltered text from the original author's `README.md`._
+
 * What's Evil Leader?
   Evil Leader provides the =<leader>= feature from Vim that provides an easy way
   to bind keys under a variable prefix key. For an experienced Emacs User it is
