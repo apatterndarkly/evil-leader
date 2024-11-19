@@ -1,6 +1,6 @@
 ** Why this fork exists
    - The original repo hasn't been updated in 10 years.
-   - The author hasn't even touched their github since 2016.
+   - It appears the author has only touched their github once since 2015.
    - As someone fairly inexperienced with Emacs, figuring out how to make this work
      with =straight= + =use-package= ate up way too much of my night.
 
